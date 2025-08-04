@@ -250,6 +250,12 @@ a {
   font-family: var(--font-plex);
 }
 
+.post-content table {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
 .post-content pre {
   background: var(--code-bg);
   padding: 16px;
