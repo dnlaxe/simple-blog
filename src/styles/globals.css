@@ -1,0 +1,340 @@
+@layer reset {
+  /* 1. Use a more intuitive box-sizing model */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  /* 2. Set global margin and padding */
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* 3. Set base font size and family */
+  html {
+    font-size: 16px;
+  }
+
+  body {
+    font-family: var(--font-inter, monospace);
+    line-height: 1.6;
+
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* 5. Improve media defaults */
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  /* 6. Inherit fonts for form controls */
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  /* 7. Avoid text overflows */
+  p,
+  h1, h2, h4, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+
+  /* 8. Improve line wrapping */
+  p {
+    text-wrap: pretty;
+  }
+
+  h1, h2, h4, h4, h5, h6 {
+    text-wrap: balance;
+  }
+
+  /* 9. Create a root stacking context */
+  #root,
+  #__next {
+    isolation: isolate;
+  }
+}
+
+/* /styles/globals.css */
+
+:root {
+  --background: #FFF;         /* Light gray background */
+  --foreground: #333;         /* Near-black text */
+  --header-color: #333;       /* Even darker for headers */
+  --paragraph-color: #666;    /* Medium-dark for readability */
+  --border-color: #EEE;       /* Soft border */
+  --code-bg: #f5f5f5;            /* Light background for code */
+  --code-text: #333;          /* Distinct color for code text */
+}
+
+html.dark {
+  --background: #333;
+  --foreground: #FFF;
+  --header-color: #FFF;
+  --paragraph-color: #EEE;
+  --border-color: #f5f5f5;
+  --code-bg: #2D2D2D;
+  --code-text: #f5f5f5;
+}
+
+html, body {
+  height: 100%;
+  font-family: var(--font-inter), monospace;
+}
+
+body {
+  overflow-y: auto;
+  color: var(--foreground);
+  background: var(--background);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Layout */
+.blog-layout {
+  padding: 0 1.5rem;
+}
+
+.blog-content {
+  min-height: 300px;
+}
+
+/* Category Tabs */
+.category-tabs ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+  margin-bottom: 1rem;
+  margin-top: 4em;
+  padding: 0;
+  row-gap: 1.5rem;
+}
+
+.category-tabs .tab {
+  border: 1px solid var(--border-color);
+  padding: 0.25rem 1rem;
+  border-radius: 50px;
+  letter-spacing: 0.02em;
+  font-size: 1rem;
+}
+
+.category-tabs .tab.active {
+  outline: 2px solid var(--border-color);
+}
+
+/* Post List */
+.post-list {
+  display: grid;
+}
+
+.post-card {
+  padding: 1rem 0;
+  border-top: 1px solid var(--border-color);
+}
+
+
+.post-card h2 {
+  font-family: var(--font-expletus);
+  letter-spacing: 0.02em;
+  margin: 0;
+  font-size: 1.125rem;
+  line-height: 1.35;
+  margin-bottom: 0.5rem;
+  color: var(--header-color);
+}
+
+.post-card .post-meta {
+  color: var(--paragraph-color);
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 1rem;
+}
+
+/* Blog Post Page */
+.blog-post {
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.post-title {
+  font-size: 2rem;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  margin-bottom: 1rem;
+  font-family: var(--font-expletus);
+  color: var(--header-color);
+}
+
+.post-meta {
+  color: var(--paragraph-color);
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem !important;
+  margin-top: 0.5rem;
+  letter-spacing: 0.02em;
+}
+
+/* Markdown Styling */
+.post-content h1,
+.post-content h2,
+.post-content h3 {
+  margin-top: 32px;
+  font-weight: 600;
+  font-family: var(--font-inter);
+  color: var(--header-color);
+}
+
+.post-content h1 {
+  font-size: 2rem;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  margin-bottom: 1rem;
+  font-family: var(--font-expletus);
+}
+
+.post-content h2 {
+  font-size: 20px;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.post-content h3 {
+  font-size: 18px;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.post-content h4 {
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--header-color);
+}
+
+.post-content p {
+  margin-bottom: 16px;
+  color: var(--paragraph-color);
+  line-height: 1.5;
+}
+
+.post-content ul,
+.post-content ol {
+  padding-left: 24px;
+  margin-bottom: 16px;
+}
+
+.post-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+  color: var(--paragraph-color);
+}
+
+.post-content code {
+  background: transparent;
+  padding: 2px 4px;
+  border-radius: 4px;
+  color: var(--code-text);
+  font-family: var(--font-plex);
+}
+
+.post-content pre {
+  background: var(--code-bg);
+  padding: 16px;
+  overflow: auto;
+  font-size: 14px;
+  color: var(--code-text);
+  border: 1px solid var(--border-color);
+  margin-bottom: 1.5rem;
+}
+
+.post-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+  background-color: var(--background);
+  border: 1px solid var(--border-color);
+}
+
+.post-content th,
+.post-content td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border: 1px solid var(--border-color);
+}
+
+.post-content th {
+  background-color: var(--code-bg);
+  color: var(--header-color);
+  font-weight: 600;
+}
+
+/* Navbar */
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 2rem 0 0 1.5rem;
+  margin: 0;
+}
+
+.navbar-logo {
+  font-weight: bold;
+  font-family: var(--font-expletus);
+  font-size: 1rem;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+  color: var(--header-color);
+}
+
+.navbar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 16px;
+}
+
+.navbar-menu li a {
+  letter-spacing: 0.02em;
+  color: inherit;
+  text-decoration: underline;
+}
+
+.navbar-menu .nav-link {
+  text-decoration: underline;
+}
+
+.navbar-menu .nav-link.active {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Theme toggle */
+.theme-toggle-button {
+  position: fixed;
+  top: 1.5rem;
+  right: 1rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  z-index: 1000;
+  color: var(--foreground);
+}

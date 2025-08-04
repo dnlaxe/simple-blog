@@ -1,15 +1,27 @@
+// app/layout.tsx
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { Inter, Expletus_Sans, IBM_Plex_Mono } from "next/font/google";
+import "../styles/globals.css";
+import Navbar from "../components/Navbar";
+import ThemeToggle from "../components/ThemeToggle";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const expletus = Expletus_Sans({
+  variable: "--font-expletus",
   subsets: ["latin"],
+  display: "swap",
+});
+
+const plex = IBM_Plex_Mono({
+  variable: "--font-plex",
+  weight: ["400"], // Required to satisfy TypeScript types
+  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -23,8 +35,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="en" className={`${inter.variable} ${expletus.variable} ${plex.variable}`}>
+      <body>
+        <Navbar />
+        <ThemeToggle />
         {children}
       </body>
     </html>
