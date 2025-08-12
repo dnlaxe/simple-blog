@@ -109,6 +109,7 @@ a {
 
 .blog-content {
   min-height: 300px;
+  padding-bottom: 6rem;
 }
 
 /* Category Tabs */
@@ -117,8 +118,8 @@ a {
   flex-wrap: wrap;
   gap: 1rem;
   list-style: none;
-  margin-bottom: 1rem;
-  margin-top: 4em;
+  margin-bottom: 1.5rem;
+  margin-top: 4rem;
   padding: 0;
   row-gap: 1.5rem;
 }
@@ -166,7 +167,7 @@ a {
 
 /* Blog Post Page */
 .blog-post {
-  padding-top: 1rem;
+  padding-top: 1.5rem;
   border-top: 1px solid var(--border-color);
 }
 
@@ -174,7 +175,7 @@ a {
   font-size: 2rem;
   line-height: 1.15;
   letter-spacing: 0.02em;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   font-family: var(--font-expletus);
   color: var(--header-color);
 }
@@ -182,8 +183,7 @@ a {
 .post-meta {
   color: var(--paragraph-color);
   font-size: 0.875rem;
-  margin-bottom: 0.5rem !important;
-  margin-top: 0.5rem;
+  margin-bottom: 1.5rem !important;
   letter-spacing: 0.02em;
 }
 
@@ -191,43 +191,37 @@ a {
 .post-content h1,
 .post-content h2,
 .post-content h3 {
-  margin-top: 32px;
-  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
   font-family: var(--font-inter);
-  color: var(--header-color);
+  line-height: 1.4;
 }
 
 .post-content h1 {
   font-size: 2rem;
-  line-height: 1.15;
-  letter-spacing: 0.02em;
-  margin-bottom: 1rem;
   font-family: var(--font-expletus);
 }
 
 .post-content h2 {
   font-size: 20px;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
 }
 
 .post-content h3 {
   font-size: 18px;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
 }
 
 .post-content h4 {
   font-size: 1rem;
   margin-top: 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   color: var(--header-color);
 }
 
 .post-content p {
   margin-bottom: 16px;
   color: var(--paragraph-color);
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .post-content ul,
